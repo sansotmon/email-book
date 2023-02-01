@@ -50,8 +50,10 @@ func main() {
 
 			file.Close()
 
-			for _, each_ln := range text {
-				mails = append(mails, &Mail{To: each_ln, From: each_ln, Date: each_ln})
+			for i, each_ln := range text {
+				if i == 0 {
+					mails = append(mails, &Mail{To: each_ln, From: each_ln, Date: each_ln})
+				}
 			}
 		}
 		return nil
